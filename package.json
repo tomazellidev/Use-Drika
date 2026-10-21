@@ -1,0 +1,39 @@
+{
+  "name": "use-drika",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env server/index.mjs --dev",
+    "build": "node scripts/build.mjs",
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "test": "node --test --test-isolation=none --test-concurrency=1 tests/server.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "test:remote": "node tests/remote.mjs",
+    "auth:status": "node --env-file-if-exists=.env scripts/auth-status.mjs",
+    "admin:create": "node --env-file-if-exists=.env scripts/admin-account.mjs",
+    "test:admin": "node --test --test-isolation=none --test-concurrency=1 tests/admin.test.mjs",
+    "test:admin-navigation": "node tests/admin-navigation.mjs",
+    "catalog:sync": "node --env-file-if-exists=.env scripts/manage.mjs catalog --apply",
+    "manage": "node --env-file-if-exists=.env scripts/manage.mjs",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1",
+    "package:vercel": "python scripts/package-vercel.py"
+  },
+  "dependencies": {
+    "jose": "^6.0.11",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@vitejs/plugin-react": "^4.5.0",
+    "lighthouse": "^13.5.0",
+    "playwright": "^1.55.0",
+    "prettier": "^3.9.10",
+    "vite": "^6.3.5"
+  }
+}

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+data/*.sqlite*
+data/backups/
+.env
+data/.admin-initial-password
+data/SENHA-INICIAL-ADMIN.txt
+.env.*
+!.env.example
+*.p8
+client_secret*.json
+artifacts/*.zip
+test-results/
+*.log
