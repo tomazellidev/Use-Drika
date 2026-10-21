@@ -1,24 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "{dist/**,config/**,data/catalog.json,server/schema.sql,server/migrations/**}",
-      "maxDuration": 60
-    }
-  },
-  "routes": [
-    {"src":"/media/(.*)","dest":"/api/index?__path=/media/$1"},
-    {
-      "src": "/(.*\\.(?:js|css|jpeg|jpg|png|webp|svg|woff2|ico|avif))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index?__path=/$1"
-    }
-  ],
-  "crons": [{ "path": "/api/maintenance", "schedule": "0 6 * * *" }]
+  "outputDirectory": "dist"
 }
