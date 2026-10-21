@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "node --env-file-if-exists=.env server/index.mjs --dev",
-    "build": "node scripts/build.mjs",
+    "build": "vite build",
     "start": "node --env-file-if-exists=.env server/index.mjs",
     "test": "node --test --test-isolation=none --test-concurrency=1 tests/server.test.mjs",
     "test:browser": "node tests/browser.mjs",
